@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="jwu.codes, jwu, jianzhuo, eric, wu, portfolio, development, developer, web developer, web development, web design, graphic design" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="Jianzhuo 'Eric' Wu, Jianzhuo Wu, Eric Wu" />
+    <link rel="stylesheet" type="text/css" href="css/layout.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="http://use.typekit.net/gkz1fyh.js" type="text/javascript"></script>
+    <script type="text/javascript">try {Typekit.load();}catch(e){}</script>
+    <script id="loading-screen-script" type="text/javascript">
+      var pageEnterTime = (new Date()).getTime();
+      var minDelay = 3000;
+      var checkDelayTimeout;
+
+      function checkWindowLoad() {
+        var now = (new Date()).getTime();
+
+        if (now - pageEnterTime < minDelay) {
+          checkDelayTimeout = setTimeout(checkWindowLoad, 100);
+          return;
+        }
+
+        clearTimeout(checkDelayTimeout);
+        checkDelayTimeout = null;
+
+        removeLoadingScreen();
+      }
+
+      function removeLoadingScreen() {
+        document.body.scrollTop = 0;
+
+        var loadingScreen = document.getElementById('loading-screen');
+        var loadingScreenScript = document.getElementById('loading-screen-script');
+
+        loadingScreen.setAttribute('class', 'scroll-out');
+
+        // setTimeout(function() {
+        //   loadingScreen.parentElement.removeChild(loadingScreen);
+        //   loadingScreenScript.parentElement.removeChild(loadingScreenScript);
+        // }, 500);
+      }
+
+      window.onload = checkWindowLoad;
+    </script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>jwu.codes - personal site of J. "Eric" Wu</title>
+  </head>
+  <body style="overflow: hidden;">
+    <div id="loading-screen">
+      <style scoped>
+        #loading-screen {
+          position:fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #444;
+          overflow: hidden;
+          z-index: 9001;
+        }
+
+        #loading-screen.scroll-out {
+          top: -100%;
+          -webkit-transition: all 500ms ease;
+          -moz-transition: all 500ms ease;
+          -o-transition: all 500ms ease;
+          transition: all 500ms ease;
+        }
+
+        #loading-screen-content {
+          position:absolute;
+          top: 200px;
+          left: 50%;
+          width: 600px;
+          height: 50%;
+          min-height: 400px;
+          max-height: 600px;
+          margin-left: -300px;
+        }
+
+        #jwu-logo {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: -278px;
+          width: 555px;
+          height: 120px;
+          background: url(img/logo.png) no-repeat center center;
+        }
+
+        #loading-screen-loader {
+          position: absolute;
+          bottom: 0;
+          left: 50%;          
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          -o-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+        }
+
+        #loading-screen-loader > img, #loading-screen-loader > svg {
+          width: auto;
+          height: auto;
+        }
+      </style>
+      <div id="loading-screen-content">
+        <div id="jwu-logo"></div>
+        <div id="loading-screen-loader">
+          <svg xmlns="http://www.w3.org/2000/svg" width="105" height="105" viewBox="0 0 105 105" fill="#fff"><circle cx="12.5" cy="12.5" r="12.5"><animate attributeName="fill-opacity" begin="0s" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/></circle><circle cx="12.5" cy="52.5" r="12.5" fill-opacity=".5"><animate attributeName="fill-opacity" begin="100ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/></circle><circle cx="52.5" cy="12.5" r="12.5"><animate attributeName="fill-opacity" begin="300ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/></circle><circle cx="52.5" cy="52.5" r="12.5"><animate attributeName="fill-opacity" begin="600ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/></circle><circle cx="92.5" cy="12.5" r="12.5"><animate attributeName="fill-opacity" begin="800ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/></circle><circle cx="92.5" cy="52.5" r="12.5"><animate attributeName="fill-opacity" begin="400ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/></circle><circle cx="12.5" cy="92.5" r="12.5"><animate attributeName="fill-opacity" begin="700ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/></circle><circle cx="52.5" cy="92.5" r="12.5"><animate attributeName="fill-opacity" begin="500ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/></circle><circle cx="92.5" cy="92.5" r="12.5"><animate attributeName="fill-opacity" begin="200ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/></circle></svg>
+        </div>
+      </div>
+    </div>
+    <div id="skrollr-body" class="container">
+      <header>
+        <marker id="top"></marker>
+        <div id="header_image"></div>
+        <div id="header_stripes">
+          <p>Greetings from afar! I am <a class="animated-hover" href="#about">J.Wu</a>. But you can just call me Eric.<br>I am a developer, designer, daydreamer, and pixel cruncher.</p>
+          <p>and I'm in SPAAAAAACE!!!</p>
+          <span class="subtitle">(not really, just daydreaming)</span>
+        </div>
+      </header>
+      <main>
+        <div id="portfolio-section" class="layout_element">
+          <section id="portfolio">
+            <header><h1>Portfolio</h1></header>
+            <article>
+              <div id="portfolio-content"><!-- Items to be added by portfolio.js --></div>
+              <div id="portfolio-pager">
+                <label id="portfolio-page-label" class="trapezoid-right">
+                  <span id="portfolio-pager-current">1</span>
+                  <span id="portfolio-pager-delimiter">/</span>
+                  <span id="portfolio-pager-max">-</span>
+                </label>
+                <button id="portfolio-pager-prev" class="trapezoid-right trapezoid-trails" type="button"><span class="animated-hover white thin"><i class="fa fa-angle-left"></i> Prev. Page</span></button>
+                <button id="portfolio-pager-next" class="trapezoid-right trapezoid-trails" type="button"><span class="animated-hover white thin">Next Page <i class="fa fa-angle-right"></i></span></button>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <div id="about-to-portfolio-connection" class="layout_element space-elevator"></div>
+
+        <div id="about-section" class="layout_element">
+          <section id="about">
+            <header><h1>About</h1></header>
+            <article>
+              <p>Jianzhuo Wu (who goes by the alias "Eric" or "J. Wu") is an Atlanta-based web developer and designer who likes to find ways to integrate aesthetic designs and streamlined code into innovative solutions. He can often be found glued to screen sipping coffee and discerning through lines of code in the browser console, clacking away in Sublime Text, or fine-tuning a design in Photoshop.</p>
+              <p>Since receiving his Bachelor of Science at Georgia Tech, J. Wu has been employed at a local Atlanta company where he uses his expertise in design and development to build a number of web applications. In his free time, J. Wu likes to work on personal side projects and open source projects on <a href="//github.com/jwutheguru" title="Github" target="_blank" title="Space Elevator - Wikipedia" class="space-elevator-link animated-hover">Github</a>.</p>
+              <div id="resume-link">
+                <a class="animated-hover white" href="jwu_resume.pdf" target="_blank">Curriculum Vitae</a>
+              </div>
+            </article>
+            <aside>
+              <header><h2>This Website</h2></header>
+              <p>This website is designed and coded by me using Illustrator and Sublime Text. The site is an artistic rendering of the <span class="highlight">Space Elevator</span>.</p>
+              <a href="//en.wikipedia.org/wiki/Space_elevator" target="_blank" title="Space Elevator - Wikipedia" class="space-elevator-link animated-hover">Read more</a>
+            </aside>
+          </section>
+        </div>
+
+        <div id="skills-to-about-connection" class="layout_element space-elevator"></div>
+
+        <div id="skills-section" class="layout_element">
+          <section id="skills">
+            <header><h1>Skills</h1></header>
+
+            <article id="web-skill" class="skill-block" data-skill-level="8" data-years-exp="3">
+              <h2 class="skill-header">Web Development</h2>
+              <div class="years-exp">
+                <strong>Years Experience: </strong>
+                <div class="years-marker"><i class="fa fa-calendar"></i></div>
+                <span class="years-exp-num">3</span> <span class="years-label">years</span>
+              </div>
+              <div class="skill-level">
+                <strong>Skill Level: </strong>
+                <span class="skill-level-num">4</span><span class="skill-level-max">/5</span>
+                <div class="skill-marker"><i class="fa fa-star"></i></div>
+              </div>
+
+              <div id="web-skill-content" class="skill-content">
+                <div class="skill-tooltip-content">
+                  <article>I have a good understanding of what makes the Internet spin. I've worked on back-end code listening to and handling requests, handling database schemas, fetching and updating database entries, and responding with processed data.</article>
+                  <aside>
+                    <div class="extras">
+                      Skills: ASP.NET, C#, SQL, Node.js, MongoDB
+                    </div>
+                    <div class="proficiency">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      Skilled
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </article>
+
+            <article id="htmlcss-skill" class="skill-block" data-skill-level="9" data-years-exp="5">
+              <h2 class="skill-header">HTML/CSS</h2>
+              <div class="years-exp">
+                <strong>Years Experience: </strong>
+                <div class="years-marker"><i class="fa fa-calendar"></i></div>
+                <span class="years-exp-num">5+</span> <span class="years-label">years</span>
+              </div>
+              <div class="skill-level">
+                <strong>Skill Level: </strong>
+                <span class="skill-level-num">4.5</span><span class="skill-level-max">/5</span>
+                <div class="skill-marker"><i class="fa fa-star"></i></div>
+              </div>
+
+              <div id="htmlcss-skill-content" class="skill-content">
+                <div class="skill-tooltip-content">
+                  <article>HTML was my first introduction to creating anything on the computer, way back when form and content were mixed together in HTML. Today, the Document Object Model and the Box Model are second nature to me. I am able to use CSS selectors and animations to create complex effects</article>
+                  <aside>
+                    <div class="extras">
+                      Skills: HTML 5, CSS 3, CSS Animation and Keyframe, LESS, Jade
+                    </div>
+                    <div class="proficiency">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o"></i>
+                       Experienced
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </article>
+
+            <article id="js-skill" class="skill-block" data-skill-level="8.5" data-years-exp="3">
+              <h2 class="skill-header">Javascript &amp; Frameworks</h2>
+              <div class="years-exp">
+                <strong>Years Experience: </strong>
+                <div class="years-marker"><i class="fa fa-calendar"></i></div>
+                <span class="years-exp-num">3</span> <span class="years-label">years</span>
+              </div>
+              <div class="skill-level">
+                <strong>Skill Level: </strong>
+                <span class="skill-level-num">4</span><span class="skill-level-max">/5</span>
+                <div class="skill-marker"><i class="fa fa-star"></i></div>
+              </div>
+              <div id="js-skill-content" class="skill-content">
+                <div class="skill-tooltip-content">
+                  <article>Since beginning my career as a web developer, Javascript has become one of my main currency as a coder. With a strong understanding of the inner workings of JS, I wield it to sculpt static pages into fully fledged applications, create dynamic animations and effects, and communicate with servers.</article>
+                  <aside>
+                    <div class="extras">
+                      Skills: JS, AJAX, JSON, jQuery, Web API, AngularJS
+                    </div>
+                    <div class="proficiency">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      Skilled
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </article>
+
+            <article id="graphic-skill" class="skill-block" data-skill-level="8" data-years-exp="5">
+              <h2 class="skill-header">Graphic<br />Design</h2>
+              <div class="years-exp">
+                <strong>Years Experience: </strong>
+                <div class="years-marker"><i class="fa fa-calendar"></i></div>
+                <span class="years-exp-num">5+</span> <span class="years-label">years</span>
+              </div>
+              <div class="skill-level">
+                <strong>Skill Level: </strong>
+                <span class="skill-level-num">4</span><span class="skill-level-max">/5</span>
+                <div class="skill-marker"><i class="fa fa-star"></i></div>
+              </div>
+
+              <div id="graphic-skill-content" class="skill-content">
+                <div class="skill-tooltip-content">
+                  <article>Stunning visuals and graphics have always fascinated me. I studied graphic design in order to understand what makes an effective visual. I'm well-versed in composition, layout, and color theory; and am able to create well-balanced visual layout to communicate my message.</article>
+                  <aside>
+                    <div class="extras">
+                      Skills: Composition, Color Theory, Brand Identity
+                    </div>
+                    <div class="proficiency">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      Skilled
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </article>
+
+            <article id="ui-skill" class="skill-block" data-skill-level="7" data-years-exp="2">
+              <h2 class="skill-header">UI/UX<br />Design</h2>
+              <div class="years-exp">
+                <strong>Years Experience: </strong>
+                <div class="years-marker"><i class="fa fa-calendar"></i></div>
+                <span class="years-exp-num">3</span> <span class="years-label">years</span>
+              </div>
+              <div class="skill-level">
+                <strong>Skill Level: </strong>
+                <span class="skill-level-num">3.5</span><span class="skill-level-max">/5</span>
+                <div class="skill-marker"><i class="fa fa-star"></i></div>
+              </div>
+
+              <div id="ui-skill-content" class="skill-content">
+                <div class="skill-tooltip-content">
+                  <article>As a web developer with an appreciation of good designs, I've explored how to shape interactions and designs into more effective means of communicating with users.</article>
+                  <aside>
+                    <div class="extras">
+                      Skills: User Discovery, Wireframing and Prototyping
+                    </div>
+                    <div class="proficiency">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o"></i>
+                      Competent
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </article>
+
+            <article id="ps-skill" class="skill-block" data-skill-level="9" data-years-exp="5">
+              <h2 class="skill-header">Photoshop/<br />Illustrator</h2>
+              <div class="years-exp">
+                <strong>Years Experience: </strong>
+                <div class="years-marker"><i class="fa fa-calendar"></i></div>
+                <span class="years-exp-num">5+</span> <span class="years-label">years</span>
+              </div>
+              <div class="skill-level">
+                <strong>Skill Level: </strong>
+                <span class="skill-level-num">4.5</span><span class="skill-level-max">/5</span>
+                <div class="skill-marker"><i class="fa fa-star"></i></div>
+              </div>
+
+              <div id="ps-skill-content" class="skill-content">
+                <div class="skill-tooltip-content">
+                  <article>I've dabbled with Photoshop for years. As a child, it was somewhat of a toy to play with and cook up a mess of visual effect soup. Combined with graphic design skills, I use it creating visually logical designs and assets. Along with Photoshop, I use Illustrator for vector based assets. The layout for this website was created with Illustrator.</article>
+                  <aside>
+                    <div class="extras">
+                      Skills: Raster/Vector Graphics, Photomanipulation, Layouting
+                    </div>
+                    <div class="proficiency">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star-half-o"></i>
+                      Experienced
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </article>
+
+            <article id="creative-skill" class="skill-block" data-skill-level="10" data-years-exp="6">
+              <h2 class="skill-header">Creative<br />Wandering</h2>
+              <div class="years-exp">
+                <strong>Years Experience: </strong>
+                <div class="years-marker"><i class="fa fa-calendar"></i></div>
+                <span class="years-exp-num">&infin;</span> <span class="years-label">years</span>
+              </div>
+              <div class="skill-level">
+                <strong>Skill Level: </strong>
+                <span class="skill-level-num">&infin;</span><span class="skill-level-max">/5</span>
+                <div class="skill-marker"><i class="fa fa-star"></i></div>
+              </div>
+              <div id="creative-skill-content" class="skill-content">
+                <div class="skill-tooltip-content">
+                  <article>Not an actual technical or knowledge skill, I'm by nature an easy-going individual with a passion for innovative applications. I like to keep up with the "State of the Web", and frequent web development blogs and resources. I'm spontaneous and often mix work and play together.</article>
+                  <aside>
+                    <div class="extras">
+                      Skills: --
+                    </div>
+                    <div class="proficiency">
+                      <i class="fa fa-star-o"></i>
+                      ???
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </article>
+
+          </section>
+        </div>
+
+        <div id="workflow-to-skills-connection" class="layout_element space-elevator"></div>
+
+        <div id="workflow-section" class="layout_element">
+          <section id="workflow">
+            <header>Workflow and Process</header>
+            <article>
+              <div class="half-col">
+                <p>I take great care every step of the way ensure no funny business after deployment, no variables left unchecked, and no pixels out of place.</p>
+                <p>To start off, I consult much search engines and knowledge bases to gain an understanding of the materials.</p>
+                <p>The brainstorming stage is the most active and whimsical stage of the development process. I grab my notepad and begin sketching schematics</p>
+              </div>
+
+              <div class="half-col">
+                <p>and wireframes of the design, often scribbling notes here and there on interactive components and animations.</p>
+                <p>Jumping straight into design and development, I would glue myself to my computer for hours fine-tuning design and assets, and clacking out code.</p>
+                <p>Once all the i's are dotted, t's crossed, and final tuneup and systems check completed, the finished product is deployed to sour into Cyberspace!</p>
+              </div>
+</article>
+            <figure>
+              <img src="img/workflow_process.png" width="767" height="222">
+            </figure>
+          </section>
+        </div>
+
+        <!-- cloud layers -->
+        <div id="clouds-backgrounds">
+          <div id="contact-to-workflow-connection" class="layout_element space-elevator"></div>
+
+          <div id="earth-bg" data--650-top="transform: translateY(-400px)" data-650-top="transform: translateY(500px)"></div>
+          <div id="clouds-bg1" data--100-top="transform: translateY(-400px)" data-100-bottom-top="transform: translateY(100px)"></div>
+          <div id="clouds-bg2" data-top="transform: translateY(-290px)" data-100-bottom-top="transform: translateY(100px)"></div>
+          <div id="clouds-bg3" data-top="transform: translateY(-250px)" data-100-bottom-top="transform: translateY(100px)"></div>
+        </div>
+
+        <div id="contact-section" class="layout_element">
+          <section id="contact">
+            <header>Contact</header>
+            <article>
+              <div id="return-address">
+                <div class="rocket-icon"><i class="fa fa-rocket fa-2x"></i></div>
+                <h2>Send a shoutout!</h2>
+                <p>Feel free to drop a line and make any inquires. I would love to hear from you!</p>
+                <div id="social-media">
+                  <a class="tooltipster" href="mailto:jwutheguru@gmail.com" title="Email" target="_blank" style="position: relative; top: -1px;"><i class="fa fa-envelope fa-2x"></i></a>
+                  <a class="tooltipster" href="//www.linkedin.com/pub/jianzhuo-wu/47/392/923" title="LinkedIn" target="_blank" ><i class="fa fa-linkedin-square fa-2x"></i></a>
+                  <a class="tooltipster" href="//github.com/jwutheguru" title="Github" target="_blank" ><i class="fa fa-github fa-2x"></i></a>
+                  <a class="tooltipster" href="//jsfiddle.net/user/jwutheguru/" title="JSFiddle" target="_blank" ><i class="fa fa-jsfiddle fa-2x"></i></a>
+                </div>
+              </div>
+              <form id="contact-form" name="contact-form" method="POST" action="cgi-bin/emailhandler.php">
+                <div class="overlay" style="display: none;">
+                  <div class="content">
+                    <i class="fa fa-check-circle fa-fw successful"></i>
+                    <h2></h2>
+                    <p></p>
+                    <a id="form-retry"><i class="fa fa-undo"></i> <label></label></a>
+                  </div>
+                </div>
+                <div class="inputGroup floatleft">
+                  <input id="contact-form-name" type="text" name="name" autocomplete="off" required />
+                  <span class="marker"></span>
+                </div>
+                <div class="inputGroup floatright">
+                  <input id="contact-form-email" type="email" name="email" autocomplete="off" required />
+                  <span class="marker floatleft"></span>
+                </div>
+                <div class="inputGroup message">
+                  <textarea id="contact-form-message" name="message" autocomplete="off" required></textarea>
+                  <span class="marker"></span>
+                </div>
+                <button id="contact-form-reset" type="reset"><span class="animated-hover white thin">Reset</span></button>
+                <button id="contact-form-submit" type="submit"><span class="animated-hover white thin">Send</span></button>
+              </form>
+            </article>
+            <a id="backToTop" href="#top"><span class="animated-hover white thin">Back to Top</span></a>
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <img class="footer-logo" src="img/logo_icon_footer.png" width="90" height="40" />
+        <p>Designed, coded, and duct taped by J. Wu.<br />Copyright &copy; 2015 All rights reserved.</p>
+      </footer>
+
+      <div id="earth-sky-bg" data-400-bottom-top="height: 1500px" data-top="height: 1800px"></div>
+      <div id="ocean-bg" data-bottom="height: 380px" data-300-bottom="height: 200px"></div>
+      <div id="moon-bg"  data-start="transform: translateY(200px)" data-end="transform: translateY(-1000px)"></div>
+      <div id="stars-bg1" class="stars-bg" data-start="transform: translateY(1px)" data-end="transform: translateY(-4000px)"></div>
+      <div id="stars-bg2" class="stars-bg" data-start="transform: translateY(1px)" data-end="transform: translateY(-1850px)"></div>
+      <div id="stars-bg3" class="stars-bg" data-start="transform: translateY(1px)" data-end="transform: translateY(-300px)"></div>
+
+      <div id="modal-container">
+        <div id="modal-header">
+          <div id="modal-close"><i class="fa fa-times fa-4x"></i></div>
+        </div>
+        <div id="modal-content"></div>
+      </div>
+      <div id="modal-overlay"></div>
+
+      <div id="output"></div>
+    </div>
+  </body>
+
+  <!-- <script src="js/require.js" type="text/javascript" data-main="js/main"></script>   -->
+  <script src="js/scripts.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-61811536-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</html>
