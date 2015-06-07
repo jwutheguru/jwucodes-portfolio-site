@@ -31,9 +31,9 @@ define(['jquery', 'util', 'debug'], function ($, util, debug) {
         }
 
         //debug.output(numStars);
-        generateStarField(stars_bg1, 150);
-        generateStarField(stars_bg2, 150);
-        generateStarField(stars_bg3, 150);
+        generateStarField(stars_bg1, numStars);
+        generateStarField(stars_bg2, numStars);
+        generateStarField(stars_bg3, numStars);
     }
 
     function generateStarField(container, numStars) {
