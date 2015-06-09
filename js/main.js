@@ -3,8 +3,6 @@ require.config({
         baseUrl: 'js',
         'jquery': 'lib/jquery-2.1.3.min', // '//code.jquery.com/jquery-2.1.3.min',
         'jquery-ui': 'lib/jquery-ui-1.11.4.min',// '//code.jquery.com/ui/1.11.4/jquery-ui.min',
-        // 'jquery': '//code.jquery.com/jquery-2.1.3.min',
-        // 'jquery-ui': '//code.jquery.com/ui/1.11.4/jquery-ui.min',
         'skrollr': 'lib/skrollr.min',
         'nicescroll': 'lib/jquery.nicescroll.min',
         'tooltipster': 'lib/jquery.tooltipster.min',
