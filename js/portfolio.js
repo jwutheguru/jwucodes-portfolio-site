@@ -21,8 +21,8 @@ define(['jquery', 'tooltipster', 'jqueryUnveil', 'portfolio-items', 'modal', 'ut
             numPages = 1;
 
         var pageFlipFadeSpeed = 250;
-        var simpleAnimation = false; // TODO: remove for production
-        var noAnimation = false; // TODO: remove for production
+        //var simpleAnimation = false; // TODO: remove for production
+        //var noAnimation = false; // TODO: remove for production
 
         function init() {
             container.empty();
@@ -123,23 +123,23 @@ define(['jquery', 'tooltipster', 'jqueryUnveil', 'portfolio-items', 'modal', 'ut
             var newPageItems = getItemsOnPage(page);
             currentPage = page;
 
-            if (noAnimation) {
-                $(currentItems).hide();
-                $(newPageItems).show();
-                pagerCurrentLabel.text(page);
+            // if (noAnimation) {
+            //     $(currentItems).hide();
+            //     $(newPageItems).show();
+            //     pagerCurrentLabel.text(page);
 
-                return;
-            }
+            //     return;
+            // }
 
-            if (simpleAnimation) {
-                $(currentItems).fadeOut(250, function() { 
-                    $(newPageItems).fadeIn(250, function() { 
-                        pagerCurrentLabel.text(page);
-                    }); 
-                });
+            // if (simpleAnimation) {
+            //     $(currentItems).fadeOut(250, function() { 
+            //         $(newPageItems).fadeIn(250, function() { 
+            //             pagerCurrentLabel.text(page);
+            //         }); 
+            //     });
 
-                return;
-            }
+            //     return;
+            // }
 
             function fadeOutItems() {
                 $(currentItems).each(function(index, elem) {
