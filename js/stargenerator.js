@@ -26,7 +26,7 @@ define(['jquery', 'util', 'debug'], function ($, util, debug) {
             numStars = 40;
         else {
             // numStars is 40 - 135 (from screenWidth 1024 to 5000);
-            numStars = Math.floor(40 + ((screenWidth - 1024) / (5000 - 1024)) * (135 - 40));
+            numStars = ~~(40 + ((screenWidth - 1024) / (5000 - 1024)) * (135 - 40));
             if (numStars < 40) numStars = 40;
         }
 
@@ -40,11 +40,11 @@ define(['jquery', 'util', 'debug'], function ($, util, debug) {
         for (var i = 0; i < numStars; i++) {
             var starDiv = document.createElement('div');
 
-            //var posX = Math.floor(0 + Math.random() * (container.clientWidth + 1));
-            var posX = Math.floor(0 + Math.random() * (screenWidth + 1));
-            var poxY = Math.floor(0 + Math.random() * (container.clientHeight + 1));
-            var size = Math.floor(minSize + Math.random() * (maxSize - minSize + 1));
-            var glowSize = Math.floor(minGlowSize + Math.random() * (maxGlowSize - minGlowSize + 1));
+            //var posX = ~~(0 + Math.random() * (container.clientWidth + 1));
+            var posX = ~~(0 + Math.random() * (screenWidth + 1));
+            var poxY = ~~(0 + Math.random() * (container.clientHeight + 1));
+            var size = ~~(minSize + Math.random() * (maxSize - minSize + 1));
+            var glowSize = ~~(minGlowSize + Math.random() * (maxGlowSize - minGlowSize + 1));
             var opacity = ((minOpacity * 100 + Math.random() * ((maxOpacity - minOpacity) * 100 + 1)) / 100).toFixed(2);
 
             starDiv.className = 'star';
