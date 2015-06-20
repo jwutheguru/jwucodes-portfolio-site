@@ -1,4 +1,5 @@
 .DS_Store
 internal resources/
 cgi-bin/
-.*
+.htaccess
+robots.txt
